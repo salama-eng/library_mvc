@@ -1,0 +1,157 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container
+{
+width: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+position: relative;
+z-index: -2;
+height: 10vh;
+
+}
+h3
+{
+   display: flex;
+   justify-content: center;
+   margin: 1rem;
+}
+
+.circle
+{
+border: 3px solid rgb(174, 182, 172);
+border-radius: 50%;
+width:40px;
+height: 40px;
+display: flex;
+justify-content:center;
+background-color: rgb(228, 228, 228);
+align-items:center;
+}
+.container-btn
+{
+width: 100%;
+display: flex;
+justify-content: space-around;
+margin-top: 20vh;
+position: relative;
+}
+.progres
+{
+display: flex;
+width: 80%;
+position: absolute;
+justify-content:space-between;
+align-items: center;
+}
+.progres::before
+{
+content:'';
+width: 100%;
+height: 2px;
+position: absolute;
+z-index: -1;
+background-color: rgb(230, 230, 230);
+height: 2px;
+
+
+}
+.active
+{
+border: 3px solid rgb(43, 182, 73) !important;
+background-color: rgb(156, 226, 14) !important;
+color: white;
+}
+.btn 
+{
+border: none;
+background-color: rgb(11, 38, 128);
+width: 7rem;
+height: 3rem;
+border-radius: 0.5rem;
+margin: 1rem;
+color: rgb(255, 255, 255);
+font-size: 1.5rem;
+}
+.active-form
+{
+display: block !important;
+}
+.form{
+text-align: center;
+}
+.form1 form,#form2 form
+{
+width:;
+display: flex;
+flex-direction:column;
+justify-content: space-around;
+
+}
+.form1 form input,#form2 form input
+{
+margin: auto;
+max-width:90%;
+min-width: 50%;
+display: flex;
+flex-direction:column;
+justify-content: space-around;
+padding:1rem;
+border-radius: 2rem;
+border:none;
+background-color: rgb(223, 233, 230);
+margin-top: 1rem;
+margin-bottom:0;
+
+
+
+}
+.form1
+{
+display:none;
+}
+#form3 
+{
+color: rgb(6, 36, 53);
+
+font-size: 1.3rem;
+
+}
+#form3 input
+{
+
+
+
+padding:1rem;
+border-radius: 2rem;
+border:none;
+background-color: rgb(228, 228, 228);
+margin-top: 1rem;
+
+}
+.place-order
+{
+
+border: none;
+background-color: rgb(16, 70, 102);
+width: 10rem;
+height: 3rem;
+border-radius: 2rem;
+color: wheat;
+font-size: 1rem;
+margin: auto;
+}
+#form4 form{
+font-size:2rem;
+margin: 2rem;
+display: flex;
+flex-direction: column;
+
+gap:2rem;
+
+}

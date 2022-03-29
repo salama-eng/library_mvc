@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+.container
+{
+ width: 100%;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ margin-top: 20vh;
+ position: relative;
+ z-index: -2;
+ height: 10vh;
+
+}
+.circle
+{
+ border: 3px solid grey;
+ border-radius: 50%;
+ width:40px;
+height: 40px;
+display: flex;
+justify-content:center;
+background-color: turquoise;
+align-items:center;
+}
+.container-btn
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20vh;
+    position: relative;
+}
+.progres
+{
+display: flex;
+width: 80%;
+position: absolute;
+justify-content:space-between;
+align-items: center;
+}
+.progres::before
+{
+    content:'';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    z-index: -1;
+    background-color: aqua;
+    height: 2px;
+
+    
+}
+.active
+{
+    border: 3px solid rgb(0, 255, 115) !important;
+   background-color: rgb(170, 255, 0) !important;
+   color: white;
+}
+.btn
+{
+    border: none;
+    background-color: rgb(16, 70, 102);
+    width: 5rem;
+    height: 3rem;
+    border-radius: 2rem;
+    color: wheat;
+    font-size: 1.5rem;
+}
+
+
+.form1,.form2,.form3,.form4
+{
+    display: none;
+}
+
+</style>
+
+
+
+
+
+
+
+    <div class="container">
+        <div id="progres" class="progres">
+            <div class="circle">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>
+
+    </div>
+    <div class="container-btn">
+        <button id="prev-btn" class="btn">prev</button>
+        <button id="next-btn" class="btn">next</button>
+    </div>
+      
+    <div id="form1" class="form1">
+
+    <form>
+
+     form4
+    </form>
+    </div>
+    <div id="form2" class="form2">
+
+        <form>
+    
+        form3
+        </form>
+
+        
+    </div>
+
+    <div id="form3" class="form3">
+
+        <form>
+    
+      form2
+        </form>
+    </div>
+
+    <div id="form4" class="form4">
+
+        <form>
+    
+       FORM1
+    
+        </form>
+    </div>
+
+        
+    <script>
+  const nextbtn=document.getElementById('next-btn');
+  const prevbtn=document.getElementById('prev-btn');
+  const progres=document.getElementById('progres');
+  const steps=document.querySelectorAll('.circle');/***to return array********/
+  const form1=document.getElementById('form1');
+  const form2=document.getElementById('form2');
+  const form3=document.getElementById('form3');
+  const form4=document.getElementById('form4');
+  let index=-1;
+  nextbtn.addEventListener("click",function(){
+   index++;
+
+  if(index>steps.length)
+  {
+   index=steps.length;
+  }
+steps.forEach((item,i)=>{
+  if(i<=index)
+  {
+      let x=index;
+      item.classList.add('active'); 
+      if(x==0)
+      {
+          form1.style.display="block";
+          form2.style.display="none";
+          form3.style.display="none";
+          form4.style.display="none";
+      }
+      if(x==1)
+      {
+          form1.style.display="none";
+          form2.style.display="block";
+          form3.style.display="none";
+          form4.style.display="none";
+      }
+      if(x==2)
+      {
+          form1.style.display="none";
+          form2.style.display="none";
+          form3.style.display="block";
+          form4.style.display="none";
+      }
+      if(x==3)
+      {
+          form1.style.display="none";
+          form2.style.display="none";
+          form4.style.display="block";
+          form3.style.display="none";
+      }
+  }
+
+
+
+});
+
+
+  });
+
+  prevbtn.addEventListener("click",function(){
+   index--;
+   if(index<=0)
+  {
+   index=0;
+  }
+
+  steps.forEach((item,i)=>{
+  if(i>index)
+  {
+      item.classList.remove('active');
+      
+  }
+
+});
+
+  });
+
+
+  
+
+    </script>
+</body>
+</html>
